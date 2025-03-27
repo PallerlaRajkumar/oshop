@@ -1,4 +1,8 @@
 # Oshop
+# I’m excited to share that I’ve successfully completed my Angular 19 Standalone project! This journey included implementing Authentication, Authorization, a dynamic Product Feed, Shopping Cart, Checkout, Cart Summary, and robust Admin Modules. I also focused on organizing Services, building reusable Components, and performing thorough Code Refactorizations to ensure maintainability.
+All of this is powered by Firebase on the backend, making the solution scalable and responsive.
+This project has been a fantastic learning experience, allowing me to refine my full-stack development skills. I appreciate everyone who supported or provided guidance along the way. I’m looking forward to leveraging these insights on future projects!
+#Angular19 #Firebase #WebDevelopment #Frontend #SoftwareDevelopment #LearningJourney
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.8.
 
