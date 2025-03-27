@@ -1,0 +1,19 @@
+<div class="row">
+  <!-- Left Column: Categories List -->
+  <div class="col-3">
+    <product-filter [category]="category"></product-filter>
+  </div>
+
+  <!-- Right Column: Products Grid -->
+  <div class="col">
+    <div class="row">
+      <ng-container *ngFor="let p of filteredProducts; let i = index">
+        <div class="col-md-6 col-lg-4 mb-4">
+         <product-card [product]="p" ></product-card>
+        </div>
+        <!-- Force a new row after every 2 cards on medium screens -->
+        <div *ngIf="(i + 1) % 2 === 0" class="w-100 d-none d-md-block"></div>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div *ngIf="quantity === 0; else controls">
+  <button (click)="onAdd()" class="btn btn-primary btn-lg btn-block w-100">
+    Add to Cart
+  </button>
+</div>
+
+<ng-template #controls>
+  <div class="row no-gutters">
+    <div class="col-auto">
+      <button (click)="onRemove()" class="btn btn-secondary custom-btn">-</button>
+    </div>
+    <div class="col text-center font-weight-bold">
+      {{ quantity }} in the cart
+    </div>
+    <div class="col-auto">
+      <button (click)="onAdd()" class="btn btn-secondary custom-btn">+</button>
+    </div>
+  </div>
+</ng-template>

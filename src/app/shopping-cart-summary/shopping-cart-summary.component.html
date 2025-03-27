@@ -1,0 +1,29 @@
+<!-- shopping-cart-summary.component.html -->
+<div class="card" style="width: 25rem;">
+    <div class="card-body">
+      <h4 class="card-title">ORDER SUMMARY</h4>
+  
+      <p class="card-text">
+        YOU HAVE {{ cart.totalItemsCount }} ITEMS IN YOUR SHOPPING CART
+      </p>
+  
+      <ul class="list-group">
+        <!-- Loop over each cart item -->
+        <li *ngFor="let item of cart.items" class="list-group-item">
+          {{ item.quantity }} x {{ item.title }}
+          <div class="float-end">
+            {{ item.price * item.quantity | currency:'USD' }}
+          </div>
+        </li>
+  
+        <!-- Grand total row -->
+        <li class="list-group-item ">
+            <strong>Total</strong>
+          <div class="float-end">
+            {{ cart.totalPrice | currency:'USD' }}
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

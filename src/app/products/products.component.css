@@ -1,0 +1,19 @@
+/* Center the container and add top/bottom margins */
+.row {
+    margin-top: 1rem;
+  }
+  
+  /* Style for product cards */
+  .card {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+  }
+  
+  /* Responsive grid: force new row on medium devices every 2 cards */
+  @media (min-width: 768px) {
+    .w-100.d-none.d-md-block {
+      display: block !important;
+      width: 100%;
+    }
+  }
+  

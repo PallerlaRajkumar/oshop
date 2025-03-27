@@ -1,0 +1,20 @@
+
+
+.card-footer{
+
+    padding: 0;
+
+}
+
+
+.card{
+    
+    margin-bottom: 30px;
+}
+
+.card-img-top {
+    height: 200px;       /* or whatever fixed height you need */
+    width: 100%;
+    object-fit: cover;   /* crops the image to fill the area */
+  }
+  

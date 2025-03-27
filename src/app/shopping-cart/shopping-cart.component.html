@@ -1,0 +1,56 @@
+<h1>Shopping Cart</h1>
+<div class="row col-10" *ngIf="cart$ | async as cart">
+  <p>You have {{ cartItemCount }} items in your shopping cart
+      <button *ngIf="cart.totalItemsCount"  (click)="clearCart()" class="btn btn-secondary btn-sm">Clear Shopping Cart</button>
+  
+  </p>
+
+ 
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Product</th>
+        <th class="text-center" style="width: 230px">Quantity</th>
+        <th class="text-right" style="width: 200px">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of (cart.itemsMap | keyvalue)">
+        <td>
+          <div
+            class="thumbnail"
+            [ngStyle]="{ 'background-image': 'url(' + item.value.imageUrl + ')' }">
+          </div>
+        </td>
+        <td>{{ item.value.title }}</td>
+        <td>
+          <div class="quantity-controls">
+            <button class="btn btn-secondary btn-sm" (click)="removeFromCart(mergeKey(item.value, item.key))">-</button>
+            <span class="cart-qty">{{ item.value.quantity }} in the cart</span>
+            <button class="btn btn-secondary btn-sm" (click)="addToCart(mergeKey(item.value, item.key))">+</button>
+          </div>
+        </td>
+        <td class="text-right">{{ item.value.quantity * item.value.price | currency:'USD':'symbol' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Footer controls -->
+  <div class="d-flex justify-content-between align-items-center mt-4">
+    <div class="d-flex flex-column">
+      <a
+      routerLink="/check-out"
+      class="btn btn-primary mb-2">
+      Check Out
+    </a>
+    
+    
+  </div>
+
+    <div class="total-price text-right">
+      <h4><strong>Total:</strong> {{ totalPrice | currency:'USD':'symbol' }}</h4>
+    </div>
+  </div>
+</div>
